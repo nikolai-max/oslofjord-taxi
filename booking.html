@@ -74,9 +74,6 @@
   </nav>
 </header>
 
-
-
-
 <div class="section-container">
     <div class="container">
     
@@ -89,26 +86,31 @@
                     <p>Tjenesten er under utvikling. Send in en bestillingsforespørsel og vi kommer tilbake til deg. Grunnet coronasituasjonen har vi dessverre begrenset kapasitet.
                     </p>
                 </div>
-                <form>
+                <form action="https://submit-form.com/MdUwGOzRP8kSgykNbyM2t">
+                  <input
+                    type="hidden"
+                    name="_feedback.success.title"
+                    value="Din forespørsel er sendt! Vi tar kontakt med deg snarest"
+                  />
                   <div class="form-group">
                     <label for="formGroupExampleInput">Ønsket distanse</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Antall km">
+                    <input name="km" type="text" class="form-control" id="formGroupExampleInput" placeholder="Antall km">
                   </div>
                   <div class="form-group">
                     <label for="formGroupExampleInput2">Dato for reise</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="feks. 30 mars kl 20:00">
+                    <input name="date" type="date" class="form-control" id="formGroupExampleInput2" placeholder="feks. 30 mars kl 20:00">
                   </div>
                   <div class="form-group">
                     <label for="formGroupExampleInput2">Antall personer</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="feks. 4 personer">
+                    <input name="persons" type="text" class="form-control" id="formGroupExampleInput2" placeholder="feks. 4 personer">
                   </div>
                   <div class="form-group">
                     <label for="formGroupExampleInput2">Epost</label>
-                    <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="dittnavn@epost.no">
+                    <input name="email" type="email" class="form-control" id="formGroupExampleInput2" placeholder="dittnavn@epost.no">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Kommentar</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea name="comments" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary mb-2">Send forespørsel</button>
                 </form>
@@ -116,9 +118,6 @@
         </div>
     </div>
 </div> 
-
-
-
 
 <div class="section-container background-color-container white-text-container">
   <div class="container">
@@ -137,6 +136,22 @@
   document.addEventListener("DOMContentLoaded", function (event) {
     navActivePage();
   });
+</script>
+
+<script>
+ fetch("https://submit-form.com/MdUwGOzRP8kSgykNbyM2t", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+      })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
 </script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
