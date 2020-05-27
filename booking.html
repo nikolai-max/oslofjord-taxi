@@ -35,6 +35,8 @@
 
   <link href="./main.a3f694c0.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha256-siyOpF/pBWUPgIcQi17TLBkjvNgNQArcmwJB8YvkAgg=" crossorigin="anonymous" />
+
+  
 </head>
 
 <body>
@@ -61,14 +63,13 @@
 
         <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./index" title="Gå tilbake til hovedsiden" class="active">Hjem</a></li>
+            <li><a href="/" title="Gå tilbake til hovedsiden" class="active">Hjem</a></li>
             <li><a href="./index#about" title="Les mer om Oslofjord båttaxi"> Om Oslofjord båttaxi</a></li>
             <li>
               <p>
                 <a href="./booking" class="btn btn-primary navbar-btn" title="Bestill din båttaxi nå">Bestill nå</a>
               </p>
             </li>
-            
           </ul>
         </div>
       </div>
@@ -96,28 +97,30 @@
                     />
                     <div class="form-group">
                       <label for="distance">Ønsket distanse</label>
-                      <input name="km" type="text" class="form-control" id="distance" placeholder="Antall km">
+                      <input name="km" type="text" class="form-control is-invalid" id="distance" placeholder="Antall km" required
+                      >
                     </div>
-
-                    
-
-
 
                     <div class="form-group">
                       <label for="date">Dato for reise</label>
                       <input 
                       name="date" 
                       data-provide="datepicker" placeholder="mm/dd/åååå" class="form-control" 
-                      id="date">
+                      id="date"
+                      required
+                      >
                     </div>   
 
                     <div class="form-group">
                       <label for="persons">Antall personer</label>
-                      <input name="persons" type="text" class="form-control" id="persons" placeholder="feks. 4 personer">
+                      <input name="persons" type="text" class="form-control is-valid" id="persons" placeholder="feks. 4 personer" required
+                      >
                     </div>
                     <div class="form-group">
                       <label for="email">Epost</label>
-                      <input name="email" type="email" class="form-control" id="email" placeholder="dittnavn@epost.no">
+                      <input name="email" type="email" class="form-control" id="email" placeholder="dittnavn@epost.no"
+                      required
+                      >
                     </div>
                     <div class="form-group">
                       <label for="comments">Kommentar</label>
@@ -156,18 +159,18 @@
   
   <script>
   fetch("https://submit-form.com/MdUwGOzRP8kSgykNbyM2t", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-          },
-        })
-          .then(function(response) {
-            console.log(response);
-          })
-          .catch(function(error) {
-            console.error(error);
-          });
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+    })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
   </script>
 
   <script type="text/javascript" src="./main.41beeca9.js"></script>
